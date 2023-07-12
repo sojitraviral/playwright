@@ -4,9 +4,9 @@ import { request } from '@playwright/test';
 
 export default class LoginPage extends BasePage {
 
-    constructor() {
+    constructor(context) {
         super();
-        // this.context = context;
+         this.context = context;
     }
 
     async login(context) {

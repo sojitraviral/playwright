@@ -16,4 +16,6 @@ export default class BasePage {
         if (btnName == 'sign out') return this.page.getByText(' Sign Out ')
         return this.page.locator(`[routerlink='/dashboard/${btnName}']`)
     }
+
+    
 }

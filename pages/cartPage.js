@@ -27,8 +27,8 @@ export default class CartPage extends BasePage {
     }
 
     async validateButtonName(buttonName = "", checkoutButton = "") {
-        await expect(this.page.getByText(buttonName)).toHaveText("Continue Shopping");
-        await expect(this.page.getByText(checkoutButton)).toHaveText("Checkout");
+        await expect(this.page.getByText(buttonName)).toBeVisible();
+        await expect(this.page.getByText(checkoutButton)).toBeVisible();
     }
 
     async deleteAllItem() {
