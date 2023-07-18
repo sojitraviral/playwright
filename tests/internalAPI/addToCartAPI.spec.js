@@ -1,7 +1,5 @@
-const { test, expect } = require('@playwright/test');
-import CartPageAPI from '../../pages/internalPageClass/cartPageAPI';
-import DashboardPageAPI from '../../pages/internalPageClass/dashboardAPI';
-import LoginPageAPI from '../../pages/internalPageClass/loginPageAPI';
+const { test } = require('@playwright/test');
+import InternalPageAPI from '../../pages/internalPageAPI';
 
 const Itemdata = {
     "_id": "646a8fc4568c3e9fb1725b37",
@@ -23,8 +21,10 @@ const Itemdata = {
 };
 test('api sign in temp', async () => {
 
-    const loginPage = new LoginPageAPI();
-    await loginPage.login();
-    await loginPage.addToCart(Itemdata)
+    const internalPageAPI = new InternalPageAPI();
+    await internalPageAPI.login();
+    await internalPageAPI.addToCart(Itemdata)
+    await internalPageAPI.cartCount()
+    await internalPageAPI.itemDelete()
 
 });
